@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Apothecary Quest"
+run/main_scene="res://src/Scenes/Maps/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Controller="*res://src/Scenes/Maps/Controller.tscn"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

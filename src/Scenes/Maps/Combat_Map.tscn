@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Assets/Buttons/AttackOff.png" type="Texture" id=2]
+[ext_resource path="res://src/Assets/Buttons/AttackOn.png" type="Texture" id=3]
+[ext_resource path="res://src/Combat.gd" type="Script" id=4]
+
+[node name="Combat_Map" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 66.4236, 68.4744 )
+
+[node name="AttackButton" type="TextureButton" parent="."]
+margin_left = 242.873
+margin_top = 97.6252
+margin_right = 292.873
+margin_bottom = 137.625
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="AttackButton" to="." method="_on_AttackButton_pressed"]

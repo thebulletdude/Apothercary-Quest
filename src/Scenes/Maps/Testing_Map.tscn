@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Scenes/Monsters/Slime.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Scenes/Player/Player.tscn" type="PackedScene" id=2]
+
+
+
+[node name="Testing_Map" type="YSort"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 14.6417, 27.9007 )
+
+[node name="Slime" parent="." instance=ExtResource( 1 )]
+position = Vector2( 260.7, 81.6522 )
