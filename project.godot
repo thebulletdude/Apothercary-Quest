@@ -22,6 +22,12 @@ config/icon="res://icon.png"
 [autoload]
 
 Controller="*res://src/Scenes/Maps/Controller.tscn"
+InventoryData="*res://src/Scenes/Maps/InventoryData.tscn"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [rendering]
 

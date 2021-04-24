@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Assets/Sprites/spr_ballboy.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="act_BallBoy" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.500565, -2.50283 )
+shape = SubResource( 1 )
+
+[node name="spr_ballboy" type="Sprite" parent="."]
+position = Vector2( -1.80487, -26.6314 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )

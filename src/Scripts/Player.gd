@@ -10,6 +10,10 @@ var velocity = Vector2.ZERO
 
 func _process(_delta):
 	Controller.setPlayerPosition(position.x, position.y)
+	combat = Controller.holdPlayer
+	
+	if Input.is_key_pressed(KEY_I):
+		Controller.inventory = true
 
 func _physics_process(delta):
 	#combat = Global.combat

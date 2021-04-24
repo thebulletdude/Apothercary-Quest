@@ -1,24 +1,153 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Assets/Buttons/AttackOff.png" type="Texture" id=2]
+[ext_resource path="res://src/Assets/Buttons/FleeOff.png" type="Texture" id=2]
 [ext_resource path="res://src/Assets/Buttons/AttackOn.png" type="Texture" id=3]
-[ext_resource path="res://src/Combat.gd" type="Script" id=4]
+[ext_resource path="res://src/Scripts/Combat.gd" type="Script" id=4]
+[ext_resource path="res://src/Assets/Buttons/FleeOn.png" type="Texture" id=5]
+[ext_resource path="res://src/Assets/Buttons/AttackOff.png" type="Texture" id=6]
+[ext_resource path="res://src/Assets/Buttons/ItemOff.png" type="Texture" id=7]
+[ext_resource path="res://src/Assets/Buttons/ItemOn.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Combat_Map" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 66.4236, 68.4744 )
+position = Vector2( 166.025, 383.754 )
+scale = Vector2( 3, 3 )
 
-[node name="AttackButton" type="TextureButton" parent="."]
-margin_left = 242.873
-margin_top = 97.6252
-margin_right = 292.873
-margin_bottom = 137.625
+[node name="UI" type="Panel" parent="."]
+margin_left = 3.0
+margin_top = 523.0
+margin_right = 1026.0
+margin_bottom = 598.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+margin_left = 119.535
+margin_top = 5.25447
+margin_right = 509.535
+margin_bottom = 71.2545
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttackButton" type="TextureButton" parent="UI/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 66.0
 texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemButton" type="TextureButton" parent="UI/HBoxContainer"]
+margin_left = 132.0
+margin_right = 259.0
+margin_bottom = 66.0
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FleeButton" type="TextureButton" parent="UI/HBoxContainer"]
+margin_left = 263.0
+margin_right = 390.0
+margin_bottom = 66.0
+texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="AttackButton" to="." method="_on_AttackButton_pressed"]
+
+[node name="HPLabel" type="RichTextLabel" parent="UI"]
+margin_left = 13.5068
+margin_top = 12.6068
+margin_right = 82.5068
+margin_bottom = 27.6068
+text = "HP: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy1" type="Node2D" parent="."]
+position = Vector2( 613.589, 383.401 )
+
+[node name="EnemyLabel1" type="RichTextLabel" parent="Enemy1"]
+margin_left = -9.48981
+margin_top = 38.888
+margin_right = 11.5102
+margin_bottom = 60.888
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy6" type="Node2D" parent="."]
+position = Vector2( 913.273, 345.037 )
+
+[node name="EnemyLabel6" type="RichTextLabel" parent="Enemy6"]
+margin_left = -9.28851
+margin_top = 35.5132
+margin_right = 10.7115
+margin_bottom = 57.5132
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy5" type="Node2D" parent="."]
+position = Vector2( 853.507, 383.799 )
+
+[node name="EnemyLabel5" type="RichTextLabel" parent="Enemy5"]
+margin_left = -8.45184
+margin_top = 31.5475
+margin_right = 11.5482
+margin_bottom = 53.5475
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy4" type="Node2D" parent="."]
+position = Vector2( 797.166, 339.958 )
+
+[node name="EnemyLabel4" type="RichTextLabel" parent="Enemy4"]
+margin_left = -9.35638
+margin_top = 36.1024
+margin_right = 10.6436
+margin_bottom = 58.1024
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy3" type="Node2D" parent="."]
+position = Vector2( 730.547, 383.046 )
+
+[node name="EnemyLabel3" type="RichTextLabel" parent="Enemy3"]
+margin_left = -6.71765
+margin_top = 33.423
+margin_right = 13.2823
+margin_bottom = 55.423
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy2" type="Node2D" parent="."]
+position = Vector2( 672.513, 343.581 )
+
+[node name="EnemyLabel2" type="RichTextLabel" parent="Enemy2"]
+margin_left = -9.29663
+margin_top = 38.6529
+margin_right = 10.7034
+margin_bottom = 60.6529
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="UI/HBoxContainer/AttackButton" to="." method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/ItemButton" to="." method="_on_ItemButton_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/FleeButton" to="." method="_on_FleeButton_pressed"]
