@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bannana.png-533d60e25b597966b0bcb1d7164b3c6e.stex"
+path="res://.import/Mushroom.png-24cc9d4ec185528fc65901ef387743af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assets/Inventory/Items/Bannana.png"
-dest_files=[ "res://.import/Bannana.png-533d60e25b597966b0bcb1d7164b3c6e.stex" ]
+source_file="res://src/Assets/Inventory/Items/Mushroom.png"
+dest_files=[ "res://.import/Mushroom.png-24cc9d4ec185528fc65901ef387743af.stex" ]
 
 [params]
 

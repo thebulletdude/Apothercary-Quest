@@ -7,9 +7,20 @@ var HP = 10
 var holdPlayer = false
 var playerEXP
 
+enum areas{
+	WOODS,
+	HOME,
+	MOUNTAIN,
+	OUTSIDEHOME,
+	TAVERN
+}
+
 #Glboal Variables
 var random = RandomNumberGenerator.new()
 var inventory = false
+var mapTrigger = false
+var nextMap = areas.OUTSIDEHOME
+var currentMap = areas.WOODS
 
 
 #Combat Variables

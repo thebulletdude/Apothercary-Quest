@@ -2,6 +2,10 @@ extends Node
 
 onready var current_scene = $Testing_Map
 const combat_map = preload("res://src/Scenes/Maps/Combat_Map.tscn")
+onready var outsideHome = $Testing_Map
+onready var woods = preload("res://src/Scenes/Maps/Woods.tscn").instance()
+onready var home = preload("res://src/Scenes/MapAssets/Home.tscn").instance()
+onready var tavern = preload("res://src/Scenes/MapAssets/Tavern.tscn").instance()
 var combat
 
 const inventory_map = preload("res://src/Scenes/Maps/Inventory.tscn")
@@ -13,6 +17,48 @@ func _process(_delta):
 	if(Controller.inventory == true):
 		Controller.inventory = false
 		open_Inventory()
+	if(Controller.mapTrigger == true):
+		mapChange()
+
+func mapChange():
+	Controller.mapTrigger = false
+	if(Controller.nextMap == Controller.areas.WOODS):
+		outsideHome = current_scene
+		remove_child(outsideHome)
+		current_scene = woods
+		add_child(current_scene)
+		Controller.currentMap =  Controller.areas.WOODS
+	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.WOODS):
+		woods = current_scene
+		remove_child(woods)
+		current_scene = outsideHome
+		add_child(current_scene)
+		Controller.currentMap =  Controller.areas.OUTSIDEHOME
+	elif(Controller.nextMap == Controller.areas.HOME):
+		outsideHome = current_scene
+		remove_child(outsideHome)
+		current_scene = home
+		add_child(current_scene)
+		Controller.currentMap =  Controller.areas.HOME
+	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.HOME):
+		home = current_scene
+		remove_child(home)
+		current_scene = outsideHome
+		add_child(current_scene)
+		Controller.currentMap =  Controller.areas.OUTSIDEHOME
+	elif(Controller.nextMap == Controller.areas.TAVERN):
+		outsideHome = current_scene
+		remove_child(outsideHome)
+		current_scene = tavern
+		add_child(current_scene)
+		Controller.currentMap =  Controller.areas.TAVERN
+	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.TAVERN):
+		tavern = current_scene
+		remove_child(tavern)
+		current_scene = outsideHome
+		add_child(current_scene)
+		Controller.currentMap =  Controller.areas.OUTSIDEHOME
+	
 
 #A function to switch the scene to the combat screen
 func enter_battle():

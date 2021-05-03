@@ -3,22 +3,22 @@
     "ItemName": "Juice"
   },
   "2": {
-    "ItemName": "Bannana"
+    "ItemName": "Banana"
   },
   "3": {
     "ItemName": "Shield"
   },
   "4": {
-    "ItemName": "Healing Potion"
+    "ItemName": "Minor Healing Potion"
   },
   "5": {
-    "ItemName": "Poison"
+    "ItemName": "Carrot"
   },
   "6": {
-    "ItemName": "Flower"
+    "ItemName": "Gunpowder"
   },
   "7": {
-    "ItemName": "Fairy Dust"
+    "ItemName": "Mushroom"
   },
   "8": {
     "ItemName": "Soda"

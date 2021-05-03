@@ -2,11 +2,12 @@ extends Node
 
 var invData
 
+
 var main_inventory = {
-	"Slot1": 1,
+	"Slot1": null,
 	"Slot2": 2,
-	"Slot3": null,
-	"Slot4": null,
+	"Slot3": 5,
+	"Slot4": 7,
 	"Slot5": null,
 	"Slot6": null,
 	"Slot7": null,
@@ -48,6 +49,14 @@ var crafting_slots = {
 	"Craft3": null,
 	"Craft4": null
 }
+
+var recipes = {
+	"Minor Healing Potion": [2, 5, 7]
+}
+var product = {
+	"Minor Healing Potion": 4
+}
+
 
 
 # Called when the node enters the scene tree for the first time.
