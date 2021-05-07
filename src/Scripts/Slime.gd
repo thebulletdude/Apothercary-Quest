@@ -10,6 +10,7 @@ var velocity = Vector2(0, 0)
 
 #Combat Variables
 const maxEnemies = 4
+const monsterName = "Slime"
 const minHP = 1
 const maxHP = 8
 const actor = "res://src/Scenes/Monsters/Actors/act_BallBoy.tscn"
@@ -39,3 +40,26 @@ func _on_CombatCircle_body_entered(body):
 		Controller.updateCombat(true, self)
 		#Destroys the monster
 		queue_free()
+		
+func fight():
+	print("ENEMY ATTACKS")
+	var hit = randi()%99+10
+	print("A " + str(hit) + "% chance  to hit") 
+	if(hit < 50):
+		print("ENEMY MISSES")
+		return false
+	else:
+		print("ENEMY HITS")
+		Controller.enemyDamage = 1
+		return true
+		
+func drop():
+	var drop = randi()%100 + 1
+	if(drop >= 0 && drop < 33):
+		return 2
+	elif(drop >= 33 && drop < 66):
+		return 5
+	else:
+		return 7
+	
+	

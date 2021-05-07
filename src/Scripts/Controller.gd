@@ -4,13 +4,16 @@ extends Node
 var playerX
 var playerY
 var HP = 10
+var mHP = 10
 var holdPlayer = false
 var playerEXP
+
+var enemyDamage = 0
 
 enum areas{
 	WOODS,
 	HOME,
-	MOUNTAIN,
+	PLAINS,
 	OUTSIDEHOME,
 	TAVERN
 }
@@ -39,7 +42,7 @@ func setPlayerPosition(x, y):
 	playerY = y
 
 func enemySetup(enemy):
-	currentEnemy = enemy
+	currentEnemy = enemy.monsterName
 	minHP = enemy.minHP
 	maxHP = enemy.maxHP
 	enemyActor = enemy.actor
@@ -56,4 +59,10 @@ func updateCombat(x, enemy):
 	combat =  x
 	holdPlayer = x
 	enemySetup(enemy)
+	
+func addItem(x):
+	for n in InventoryData.main_inventory:
+		if(InventoryData.main_inventory[n] == null):
+			InventoryData.main_inventory[n] = x
+			return 1
 	

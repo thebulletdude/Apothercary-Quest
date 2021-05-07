@@ -6,6 +6,7 @@ onready var outsideHome = $Testing_Map
 onready var woods = preload("res://src/Scenes/Maps/Woods.tscn").instance()
 onready var home = preload("res://src/Scenes/MapAssets/Home.tscn").instance()
 onready var tavern = preload("res://src/Scenes/MapAssets/Tavern.tscn").instance()
+onready var plains = preload("res://src/Scenes/Maps/Plains.tscn").instance()
 var combat
 
 const inventory_map = preload("res://src/Scenes/Maps/Inventory.tscn")
@@ -27,19 +28,19 @@ func mapChange():
 		remove_child(outsideHome)
 		current_scene = woods
 		add_child(current_scene)
-		Controller.currentMap =  Controller.areas.WOODS
+		Controller.currentMap = Controller.areas.WOODS
 	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.WOODS):
 		woods = current_scene
 		remove_child(woods)
 		current_scene = outsideHome
 		add_child(current_scene)
-		Controller.currentMap =  Controller.areas.OUTSIDEHOME
+		Controller.currentMap = Controller.areas.OUTSIDEHOME
 	elif(Controller.nextMap == Controller.areas.HOME):
 		outsideHome = current_scene
 		remove_child(outsideHome)
 		current_scene = home
 		add_child(current_scene)
-		Controller.currentMap =  Controller.areas.HOME
+		Controller.currentMap = Controller.areas.HOME
 	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.HOME):
 		home = current_scene
 		remove_child(home)
@@ -51,13 +52,25 @@ func mapChange():
 		remove_child(outsideHome)
 		current_scene = tavern
 		add_child(current_scene)
-		Controller.currentMap =  Controller.areas.TAVERN
+		Controller.currentMap = Controller.areas.TAVERN
 	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.TAVERN):
 		tavern = current_scene
 		remove_child(tavern)
 		current_scene = outsideHome
 		add_child(current_scene)
 		Controller.currentMap =  Controller.areas.OUTSIDEHOME
+	elif(Controller.nextMap == Controller.areas.PLAINS):
+		outsideHome = current_scene
+		remove_child(outsideHome)
+		current_scene = plains
+		add_child(current_scene)
+		Controller.currentMap = Controller.areas.PLAINS
+	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.PLAINS):
+		plains = current_scene
+		remove_child(plains)
+		current_scene = outsideHome
+		add_child(current_scene)
+		Controller.currentMap = Controller.areas.OUTSIDEHOME
 	
 
 #A function to switch the scene to the combat screen

@@ -41,3 +41,12 @@ func _on_Area2D2_body_entered(body):
 		Controller.nextMap = Controller.areas.TAVERN
 		$Player.velocity = Vector2.ZERO
 		Controller.mapTrigger = true
+
+
+func _on_Area2D3_body_entered(body):
+	if(body.get_name() == "Player"):
+		$Player.position.x = $SpawnPoint4.position.x
+		$Player.position.y = $SpawnPoint4.position.y
+		Controller.nextMap = Controller.areas.PLAINS
+		$Player.velocity = Vector2.ZERO
+		Controller.mapTrigger = true
