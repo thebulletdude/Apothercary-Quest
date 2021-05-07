@@ -72,7 +72,7 @@ func _ready():
 	add_child(pointer)
 	
 	_move_Pointer()
-	
+	invContainsPotions()
 	
 	#Setup The Fight
 	for n in enemyCount:
@@ -135,6 +135,7 @@ func _process(_delta):
 			if(hit):
 				Controller.HP -= Controller.enemyDamage
 				$UI/HPLabel.text = "HP: " + str(Controller.HP)
+		invContainsPotions()
 		if(Controller.HP <= 0):
 			currentState = states.COMBAT_OVER
 		else:
@@ -193,6 +194,7 @@ func _on_FirePotion_pressed():
 			enemyList[n] -= 5
 			healthTags[n].text = str(enemyList[n])
 	AoECheck()
+	removePotion(findPotionIndex(9))
 	
 func _on_IcePotion_pressed():
 	for n in range(len(enemyList)):
@@ -200,12 +202,15 @@ func _on_IcePotion_pressed():
 			enemyList[n] -= 5
 			healthTags[n].text = str(enemyList[n])
 	AoECheck()
+	removePotion(findPotionIndex(6))
 	
 func _on_HealthPotion_pressed():
 	Controller.HP += 5
 	if(Controller.HP > Controller.mHP):
 		Controller.HP = Controller.mHP
 	$UI/HPLabel.text = "HP: " + str(Controller.HP)
+	removePotion(findPotionIndex(4))
+	currentState = states.ENEMY
 	
 func AoECheck():
 	var count = 0
@@ -225,3 +230,32 @@ func AoECheck():
 			if(_checkAvailable(selectedIndex)):
 				check = true
 	check = false
+	currentState = states.ENEMY
+
+func invContainsPotions():
+	var containsPotion = false
+	$ItemList/ScrollContainer/VBoxContainer/HealthPotion.visible = false
+	$ItemList/ScrollContainer/VBoxContainer/FirePotion.visible = false
+	$ItemList/ScrollContainer/VBoxContainer/IcePotion.visible = false
+	for n in InventoryData.main_inventory:
+		if(InventoryData.main_inventory[n] == 4):
+			$ItemList/ScrollContainer/VBoxContainer/HealthPotion.visible = true
+			containsPotion = true
+		elif(InventoryData.main_inventory[n] == 9):
+			$ItemList/ScrollContainer/VBoxContainer/FirePotion.visible = true
+			containsPotion = true
+		elif(InventoryData.main_inventory[n] == 6):
+			$ItemList/ScrollContainer/VBoxContainer/IcePotion.visible = true
+			containsPotion = true
+	if(!containsPotion):
+		$ItemList/ScrollContainer/VBoxContainer/NoPotionLabel.visible = true
+	else:
+		$ItemList/ScrollContainer/VBoxContainer/NoPotionLabel.visible = false
+		
+func findPotionIndex(x):
+	for n in InventoryData.main_inventory:
+		if(InventoryData.main_inventory[n] == x):
+			return n
+
+func removePotion(x):
+	InventoryData.main_inventory[x] = null

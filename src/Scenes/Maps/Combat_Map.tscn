@@ -45,38 +45,37 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ItemList/ScrollContainer"]
 margin_right = 118.0
-margin_bottom = 116.0
+margin_bottom = 88.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="FirePotion" type="Button" parent="ItemList/ScrollContainer/VBoxContainer"]
-margin_right = 106.0
+visible = false
+margin_right = 118.0
 margin_bottom = 20.0
 text = "Fire Potion"
 
-[node name="PoisonPotion" type="Button" parent="ItemList/ScrollContainer/VBoxContainer"]
-margin_top = 24.0
-margin_right = 106.0
-margin_bottom = 44.0
-text = "Poison Potion"
-
 [node name="IcePotion" type="Button" parent="ItemList/ScrollContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 106.0
-margin_bottom = 68.0
+visible = false
+margin_top = 24.0
+margin_right = 118.0
+margin_bottom = 44.0
 text = "Ice Potion"
 
 [node name="HealthPotion" type="Button" parent="ItemList/ScrollContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 106.0
-margin_bottom = 92.0
+visible = false
+margin_top = 48.0
+margin_right = 118.0
+margin_bottom = 68.0
 text = "Health Potion"
 
-[node name="AgilityPotion" type="Button" parent="ItemList/ScrollContainer/VBoxContainer"]
-margin_top = 96.0
-margin_right = 106.0
-margin_bottom = 116.0
-text = "Agility Potion"
+[node name="NoPotionLabel" type="RichTextLabel" parent="ItemList/ScrollContainer/VBoxContainer"]
+visible = false
+margin_right = 118.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "No Potions"
 
 [node name="UI" type="Panel" parent="."]
 margin_top = 523.0

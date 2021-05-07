@@ -6,21 +6,48 @@
     "ItemName": "Banana"
   },
   "3": {
-    "ItemName": "Shield"
+    "ItemName": "Poison Potion"
   },
   "4": {
-    "ItemName": "Minor Healing Potion"
+    "ItemName": "Healing Potion"
   },
   "5": {
     "ItemName": "Carrot"
   },
   "6": {
-    "ItemName": "Gunpowder"
+    "ItemName": "Ice Potion"
   },
   "7": {
     "ItemName": "Mushroom"
   },
   "8": {
-    "ItemName": "Soda"
+    "ItemName": "Gunpowder"
+  },
+  "9": {
+    "ItemName": "Fire Potion"
+  },
+  "10": {
+    "ItemName": "Agility Potion"
+  },
+  "11": {
+    "ItemName": "Orange"
+  },
+  "12": {
+    "ItemName": "Tomato"
+  },
+  "13": {
+    "ItemName": "Fire Salt"
+  },
+  "14": {
+    "ItemName": "Ice Cube"
+  },
+  "15": {
+    "ItemName": "Snowball"
+  },
+  "16": {
+    "ItemName": "FireBall"
+  },
+  "17": {
+    "ItemName": "TopHat"
   }
 }

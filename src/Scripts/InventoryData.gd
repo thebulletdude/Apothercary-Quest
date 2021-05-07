@@ -9,12 +9,12 @@ var main_inventory = {
 	"Slot3": 5,
 	"Slot4": null,
 	"Slot5": 7,
-	"Slot6": null,
-	"Slot7": null,
-	"Slot8": null,
-	"Slot9": null,
-	"Slot10": null,
-	"Slot11": null,
+	"Slot6": 8,
+	"Slot7": 13,
+	"Slot8": 16,
+	"Slot9": 14,
+	"Slot10": 15,
+	"Slot11": 17,
 	"Slot12": null,
 	"Slot13": null,
 	"Slot14": null,
@@ -51,10 +51,14 @@ var crafting_slots = {
 }
 
 var recipes = {
-	"Minor Healing Potion": [2, 5, 7]
+	"Healing Potion": [2, 5, 7],
+	"Fire Potion": [8, 13, 16],
+	"Ice Potion": [14, 15, 17]
 }
 var product = {
-	"Minor Healing Potion": 4
+	"Healing Potion": 4,
+	"Fire Potion": 9,
+	"Ice Potion": 6
 }
 
 

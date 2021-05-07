@@ -91,7 +91,7 @@ func _on_Minor_Healing_Potion_pressed():
 	i1 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["2"]["ItemName"] + ".png"))
 	i2 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["5"]["ItemName"] + ".png"))
 	i3 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["7"]["ItemName"] + ".png"))
-	i4 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["1"]["ItemName"] + ".png"))
+	i4 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["4"]["ItemName"] + ".png"))
 	setRecipe()
 
 
@@ -104,3 +104,19 @@ func _on_CreateButton_pressed():
 	InventoryData.crafting_slots["Craft4"] = InventoryData.product[currentItem]
 	$NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer/Craft4/Icon.texture = load("res://src/Assets/Inventory/Items/" + currentItem + ".png")
 	
+
+
+func _on_Fire_Potion_pressed():
+	i1 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["8"]["ItemName"] + ".png"))
+	i2 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["13"]["ItemName"] + ".png"))
+	i3 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["16"]["ItemName"] + ".png"))
+	i4 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["9"]["ItemName"] + ".png"))
+	setRecipe()
+
+
+func _on_Ice_Potion_pressed():
+	i1 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["14"]["ItemName"] + ".png"))
+	i2 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["15"]["ItemName"] + ".png"))
+	i3 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["17"]["ItemName"] + ".png"))
+	i4 = load("res://src/Assets/Inventory/Items/" + str(InventoryData.invData["6"]["ItemName"] + ".png"))
+	setRecipe()

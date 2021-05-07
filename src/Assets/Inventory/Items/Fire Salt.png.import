@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Minor Healing Potion.png-bca1941bd71cfc58262d1fbdf9f2766b.stex"
+path="res://.import/Fire Salt.png-78a945f5abb6e57ab01c856aba98e7f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assets/Inventory/Items/Minor Healing Potion.png"
-dest_files=[ "res://.import/Minor Healing Potion.png-bca1941bd71cfc58262d1fbdf9f2766b.stex" ]
+source_file="res://src/Assets/Inventory/Items/Fire Salt.png"
+dest_files=[ "res://.import/Fire Salt.png-78a945f5abb6e57ab01c856aba98e7f3.stex" ]
 
 [params]
 

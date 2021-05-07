@@ -395,59 +395,37 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar"]
-margin_right = 457.0
-margin_bottom = 116.0
-size_flags_horizontal = 3
-
-[node name="Minor Healing Potion" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
-margin_right = 457.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-text = "Minor Healing Potion"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Major Healing Potion2" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
-margin_top = 24.0
-margin_right = 457.0
-margin_bottom = 44.0
-size_flags_horizontal = 3
-text = "Major Healing Potion"
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Extreme Healing Potion3" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
-margin_top = 48.0
-margin_right = 457.0
+margin_right = 469.0
 margin_bottom = 68.0
 size_flags_horizontal = 3
-text = "Extreme Healing Potion"
+
+[node name="Healing Potion" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
+margin_right = 469.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Healing Potion"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Minor Speed Potion4" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
-margin_top = 72.0
-margin_right = 457.0
-margin_bottom = 92.0
+[node name="Fire Potion" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
+margin_top = 24.0
+margin_right = 469.0
+margin_bottom = 44.0
 size_flags_horizontal = 3
-text = "Minor Speed Potion"
+text = "Fire Potion"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Major Speed Potion5" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
-margin_top = 96.0
-margin_right = 457.0
-margin_bottom = 116.0
+[node name="Ice Potion" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer"]
+margin_top = 48.0
+margin_right = 469.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
-text = "Major Speed Potion"
+text = "Ice Potion"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -505,7 +483,9 @@ position = Vector2( 256.738, 180.798 )
 zoom = Vector2( 0.5, 0.6 )
 [connection signal="closing" from="." to="." method="_on_Inventory_closing"]
 [connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/CreateButton" to="." method="_on_CreateButton_pressed"]
-[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer/Minor Healing Potion" to="." method="_on_Minor_Healing_Potion_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer/Healing Potion" to="." method="_on_Minor_Healing_Potion_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer/Fire Potion" to="." method="_on_Fire_Potion_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/VScrollBar/VBoxContainer/Ice Potion" to="." method="_on_Ice_Potion_pressed"]
 [connection signal="pressed" from="NinePatchRect/DoneButton" to="." method="_on_DoneButton_pressed"]
 
 [editable path="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2/Recipe1"]
