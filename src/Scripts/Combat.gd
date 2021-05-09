@@ -10,6 +10,7 @@ var enemy
 var actor
 var actorReference
 var hit
+var enemies = []
 
 #For the pointer as well as reference
 var selected
@@ -23,6 +24,9 @@ var check = false
 var finalItems
 var itemsList = []
 var setList = false
+
+
+var attacked = false
 
 
 #States
@@ -76,7 +80,8 @@ func _ready():
 	
 	#Setup The Fight
 	for n in enemyCount:
-		spawnLocations[n].add_child(actor.instance())
+		enemies.append(actor.instance())
+		spawnLocations[n].add_child(enemies[n])
 		healthTags[n].text = str(enemyList[n])
 		taken[n] = true
 
@@ -126,20 +131,13 @@ func _process(_delta):
 			setList = true
 	if(currentState == states.PLAYER):
 		$UI.visible = true
+		pointer.visible = true
 	elif(currentState == states.ENEMY):
 		$UI.visible = false
+		pointer.visible = false
 		#Enemy AI
-		for n in enemyCount:
-			var currentEnemy = load("res://src/Scenes/Monsters/OpenWorld/" + enemy + ".tscn").instance()
-			hit = currentEnemy.fight()
-			if(hit):
-				Controller.HP -= Controller.enemyDamage
-				$UI/HPLabel.text = "HP: " + str(Controller.HP)
-		invContainsPotions()
-		if(Controller.HP <= 0):
-			currentState = states.COMBAT_OVER
-		else:
-			currentState = states.PLAYER
+		if(!attacked):
+			fight()
 	elif(currentState == states.COMBAT_OVER):
 		Controller.enemyEncountering = []
 		$Pointer.visible = false
@@ -159,6 +157,7 @@ func _on_AttackButton_pressed():
 	#This code runs if an enemy is dead Reseting some of the values
 	if(enemyList[selectedIndex] <= 0):
 		enemyCount -= 1
+		enemies.remove(selectedIndex)
 		selected.get_node(actorReference).queue_free()
 		taken[selectedIndex] = false
 		healthTags[selectedIndex].text = ""
@@ -171,7 +170,12 @@ func _on_AttackButton_pressed():
 			if(_checkAvailable(selectedIndex)):
 				check = true
 		check = false
-	currentState = states.ENEMY
+	$Player/AnimationPlayer.play("attack")
+	yield($Player/AnimationPlayer, "animation_finished")
+	if(enemyCount > 0):
+		currentState = states.ENEMY
+	else:
+		currentState = states.COMBAT_OVER
 
 
 func _on_ItemButton_pressed():
@@ -210,13 +214,17 @@ func _on_HealthPotion_pressed():
 		Controller.HP = Controller.mHP
 	$UI/HPLabel.text = "HP: " + str(Controller.HP)
 	removePotion(findPotionIndex(4))
-	currentState = states.ENEMY
+	if(enemyCount > 0):
+		currentState = states.ENEMY
+	else:
+		currentState = states.COMBAT_OVER
 	
 func AoECheck():
 	var count = 0
 	for n in enemyList:
 		if(n <= 0 && taken[count]):
 			enemyCount -= 1
+			enemies.remove(count)
 			spawnLocations[count].get_node(actorReference).queue_free()
 			taken[count] = false
 			healthTags[count].text = ""
@@ -230,7 +238,10 @@ func AoECheck():
 			if(_checkAvailable(selectedIndex)):
 				check = true
 	check = false
-	currentState = states.ENEMY
+	if(enemyCount > 0):
+		currentState = states.ENEMY
+	else:
+		currentState = states.COMBAT_OVER
 
 func invContainsPotions():
 	var containsPotion = false
@@ -259,3 +270,26 @@ func findPotionIndex(x):
 
 func removePotion(x):
 	InventoryData.main_inventory[x] = null
+
+func fight():
+	attacked = true
+	for n in enemyCount:
+		var currentEnemy = load("res://src/Scenes/Monsters/OpenWorld/" + enemy + ".tscn").instance()
+		hit = currentEnemy.fight()
+		$InformationPanel.visible = true
+		if(hit):
+			$InformationPanel/DamageLabel.text = "The enemy hits dealing " + str(Controller.enemyDamage) + " damage."
+			Controller.HP -= Controller.enemyDamage
+			$UI/HPLabel.text = "HP: " + str(Controller.HP)
+		else:
+			$InformationPanel/DamageLabel.text = "The enemy misses."
+		enemies[n].get_node("AnimationPlayer").play("attack")
+		yield(enemies[n].get_node("AnimationPlayer"), "animation_finished")
+	invContainsPotions()
+	$InformationPanel.visible = false
+	if(Controller.HP <= 0):
+		currentState = states.COMBAT_OVER
+		attacked = false
+	else:
+		currentState = states.PLAYER
+		attacked = false

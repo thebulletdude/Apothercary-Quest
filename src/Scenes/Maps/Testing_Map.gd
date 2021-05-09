@@ -50,3 +50,21 @@ func _on_Area2D3_body_entered(body):
 		Controller.nextMap = Controller.areas.PLAINS
 		$Player.velocity = Vector2.ZERO
 		Controller.mapTrigger = true
+
+
+func _on_Area2D4_body_entered(body):
+	if(body.get_name() == "Player"):
+		$Player.position.x = $SpawnPoint5.position.x
+		$Player.position.y = $SpawnPoint5.position.y
+		Controller.nextMap = Controller.areas.SNOW
+		$Player.velocity = Vector2.ZERO
+		Controller.mapTrigger = true
+
+
+func _on_Area2D5_body_entered(body):
+	if(body.get_name() == "Player"):
+		$Player.position.x = $SpawnPoint6.position.x
+		$Player.position.y = $SpawnPoint6.position.y
+		Controller.nextMap = Controller.areas.MFOREST
+		$Player.velocity = Vector2.ZERO
+		Controller.mapTrigger = true

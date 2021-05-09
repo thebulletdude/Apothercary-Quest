@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Assets/Buttons/FleeOff.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Assets/Buttons/AttackOff.png" type="Texture" id=6]
 [ext_resource path="res://src/Assets/Buttons/ItemOff.png" type="Texture" id=7]
 [ext_resource path="res://src/Assets/Buttons/ItemOn.png" type="Texture" id=8]
+[ext_resource path="res://src/Scenes/MapAssets/TreeBackground.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -17,6 +18,11 @@ bg_color = Color( 0.0862745, 0.0823529, 0.0823529, 0.752941 )
 
 [node name="Combat_Map" type="Node2D"]
 script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 507.806, 298.737 )
+scale = Vector2( 1.67898, 1.65809 )
+texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 166.025, 383.754 )
@@ -366,6 +372,30 @@ margin_right = 1024.0
 margin_bottom = 601.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="InformationPanel" type="Panel" parent="."]
+visible = false
+margin_left = -26.5244
+margin_top = 70.8882
+margin_right = 1043.48
+margin_bottom = 129.888
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DamageLabel" type="RichTextLabel" parent="InformationPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -81.0195
+margin_top = -8.10503
+margin_right = 220.98
+margin_bottom = 31.895
+text = "Enemy Hit for 6 damage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ItemList/ScrollContainer/VBoxContainer/FirePotion" to="." method="_on_FirePotion_pressed"]
 [connection signal="pressed" from="ItemList/ScrollContainer/VBoxContainer/IcePotion" to="." method="_on_IcePotion_pressed"]
 [connection signal="pressed" from="ItemList/ScrollContainer/VBoxContainer/HealthPotion" to="." method="_on_HealthPotion_pressed"]

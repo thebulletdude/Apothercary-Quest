@@ -15,7 +15,9 @@ enum areas{
 	HOME,
 	PLAINS,
 	OUTSIDEHOME,
-	TAVERN
+	TAVERN,
+	SNOW,
+	MFOREST
 }
 
 #Glboal Variables

@@ -7,6 +7,8 @@ onready var woods = preload("res://src/Scenes/Maps/Woods.tscn").instance()
 onready var home = preload("res://src/Scenes/MapAssets/Home.tscn").instance()
 onready var tavern = preload("res://src/Scenes/MapAssets/Tavern.tscn").instance()
 onready var plains = preload("res://src/Scenes/Maps/Plains.tscn").instance()
+onready var snow = preload("res://src/Scenes/Maps/SnowArea.tscn").instance()
+onready var mforest = preload("res://src/Scenes/Maps/MiniForest.tscn").instance()
 var combat
 
 const inventory_map = preload("res://src/Scenes/Maps/Inventory.tscn")
@@ -71,7 +73,30 @@ func mapChange():
 		current_scene = outsideHome
 		add_child(current_scene)
 		Controller.currentMap = Controller.areas.OUTSIDEHOME
-	
+	elif(Controller.nextMap == Controller.areas.SNOW):
+		outsideHome = current_scene
+		remove_child(outsideHome)
+		current_scene = snow
+		add_child(current_scene)
+		Controller.currentMap = Controller.areas.SNOW
+	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.SNOW):
+		snow = current_scene
+		remove_child(snow)
+		current_scene = outsideHome
+		add_child(current_scene)
+		Controller.currentMap = Controller.areas.OUTSIDEHOME
+	elif(Controller.nextMap == Controller.areas.MFOREST):
+		outsideHome = current_scene
+		remove_child(outsideHome)
+		current_scene = mforest
+		add_child(current_scene)
+		Controller.currentMap = Controller.areas.MFOREST
+	elif(Controller.nextMap == Controller.areas.OUTSIDEHOME && Controller.currentMap == Controller.areas.MFOREST):
+		mforest = current_scene
+		remove_child(mforest)
+		current_scene = outsideHome
+		add_child(current_scene)
+		Controller.currentMap = Controller.areas.OUTSIDEHOME
 
 #A function to switch the scene to the combat screen
 func enter_battle():
