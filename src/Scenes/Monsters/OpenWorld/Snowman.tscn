@@ -1,26 +1,26 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Snowman.gd" type="Script" id=1]
-[ext_resource path="res://src/Assets/Sprites/Snowman.png" type="Texture" id=2]
+[ext_resource path="res://src/Assets/Sprites/Snowman.png" type="Texture" id=1]
+[ext_resource path="res://src/Scripts/Snowman.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 1 )
 region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 1 )
 region = Rect2( 144, 0, 48, 48 )
 
 [sub_resource type="SpriteFrames" id=5]
@@ -41,12 +41,12 @@ radius = 112.992
 radius = 28.4154
 
 [node name="Snowman" type="KinematicBody2D"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

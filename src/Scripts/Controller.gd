@@ -3,12 +3,30 @@ extends Node
 #Player variables
 var playerX
 var playerY
-var HP = 10
-var mHP = 10
+var HP = 50
+var mHP = 50
 var holdPlayer = false
 var playerEXP
 
+#Variable to hold the message of dialogue
+var message
+var inDialogue = false
+var acceptReward = null
+var rewardItem
+var decision = false
+var quests = [0, 0, 0, 0]
+var currentQuest
+
+var final = false
+
+var finalBattle = false
+var finalBattleOver = false
+
 var enemyDamage = 0
+
+var start = false
+
+var credits = false
 
 enum areas{
 	WOODS,
@@ -66,5 +84,10 @@ func addItem(x):
 	for n in InventoryData.main_inventory:
 		if(InventoryData.main_inventory[n] == null):
 			InventoryData.main_inventory[n] = x
+			return 1
+func removeItem(x):
+	for n in InventoryData.main_inventory:
+		if(InventoryData.main_inventory[n] == x):
+			InventoryData.main_inventory[n] = null
 			return 1
 	

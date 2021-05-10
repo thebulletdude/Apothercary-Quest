@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://src/Scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Assets/Buttons/FleeOff.png" type="Texture" id=2]
-[ext_resource path="res://src/Assets/Buttons/AttackOn.png" type="Texture" id=3]
-[ext_resource path="res://src/Scripts/Combat.gd" type="Script" id=4]
-[ext_resource path="res://src/Assets/Buttons/FleeOn.png" type="Texture" id=5]
-[ext_resource path="res://src/Assets/Buttons/AttackOff.png" type="Texture" id=6]
-[ext_resource path="res://src/Assets/Buttons/ItemOff.png" type="Texture" id=7]
-[ext_resource path="res://src/Assets/Buttons/ItemOn.png" type="Texture" id=8]
-[ext_resource path="res://src/Scenes/MapAssets/TreeBackground.png" type="Texture" id=9]
+[ext_resource path="res://src/Assets/Text/Flee2.png" type="Texture" id=1]
+[ext_resource path="res://src/Assets/Text/Items1.png" type="Texture" id=2]
+[ext_resource path="res://src/Assets/Text/Flee1.png" type="Texture" id=3]
+[ext_resource path="res://src/Assets/Text/Items2.png" type="Texture" id=4]
+[ext_resource path="res://src/Scenes/MapAssets/TreeBackground.png" type="Texture" id=5]
+[ext_resource path="res://src/Assets/Text/Attack2.png" type="Texture" id=6]
+[ext_resource path="res://src/Assets/Text/Attack1.png" type="Texture" id=7]
+[ext_resource path="res://src/Scripts/Combat.gd" type="Script" id=8]
+[ext_resource path="res://src/Scenes/Player/Player.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -17,14 +17,14 @@ bg_color = Color( 0, 0, 0, 1 )
 bg_color = Color( 0.0862745, 0.0823529, 0.0823529, 0.752941 )
 
 [node name="Combat_Map" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 507.806, 298.737 )
 scale = Vector2( 1.67898, 1.65809 )
-texture = ExtResource( 9 )
+texture = ExtResource( 5 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 166.025, 383.754 )
 scale = Vector2( 3, 3 )
 
@@ -104,7 +104,7 @@ __meta__ = {
 [node name="AttackButton" type="TextureButton" parent="UI/HBoxContainer"]
 margin_right = 128.0
 margin_bottom = 75.0
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 7 )
 texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -114,8 +114,8 @@ __meta__ = {
 margin_left = 132.0
 margin_right = 259.0
 margin_bottom = 75.0
-texture_normal = ExtResource( 8 )
-texture_hover = ExtResource( 7 )
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,8 +124,8 @@ __meta__ = {
 margin_left = 263.0
 margin_right = 390.0
 margin_bottom = 75.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 2 )
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -228,13 +228,13 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="EndPanel/VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 197.0
+margin_bottom = 147.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="EndPanel/VBoxContainer/HBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 197.0
+margin_bottom = 147.0
 size_flags_horizontal = 3
 
 [node name="VictoryLabel" type="RichTextLabel" parent="EndPanel/VBoxContainer/HBoxContainer/Panel"]
@@ -270,15 +270,15 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="EndPanel/VBoxContainer"]
-margin_top = 201.0
+margin_top = 151.0
 margin_right = 1024.0
-margin_bottom = 399.0
+margin_bottom = 298.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="EndPanel/VBoxContainer/HBoxContainer2"]
 margin_right = 510.0
-margin_bottom = 198.0
+margin_bottom = 147.0
 size_flags_horizontal = 3
 text = "
 
@@ -291,7 +291,7 @@ text = "
 [node name="ScrollContainer" type="Control" parent="EndPanel/VBoxContainer/HBoxContainer2"]
 margin_left = 514.0
 margin_right = 1024.0
-margin_bottom = 198.0
+margin_bottom = 147.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -367,11 +367,18 @@ margin_right = 44.0
 margin_bottom = 58.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="EndPanel/VBoxContainer"]
-margin_top = 403.0
+margin_top = 302.0
 margin_right = 1024.0
-margin_bottom = 601.0
+margin_bottom = 449.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndPanel/VBoxContainer"]
+margin_top = 453.0
+margin_right = 1024.0
+margin_bottom = 601.0
+size_flags_vertical = 3
+text = "																																																									Press E to exit"
 
 [node name="InformationPanel" type="Panel" parent="."]
 visible = false

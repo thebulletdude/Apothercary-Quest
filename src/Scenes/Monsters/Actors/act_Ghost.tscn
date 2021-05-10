@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Scenes/Monsters/Actors/act_Snowman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Assets/Sprites/Ghostly.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 80, 96 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 80, 0, 80, 96 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 160, 0, 80, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 240, 0, 80, 96 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="act_Ghost" instance=ExtResource( 1 )]
+position = Vector2( 0.667419, -73.4162 )
+scale = Vector2( 2, 2 )
+
+[node name="spr_ballboy" parent="." index="1"]
+texture = null
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+frames = SubResource( 5 )
+animation = "idle"
+playing = true

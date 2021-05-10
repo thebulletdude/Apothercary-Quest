@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Scenes/Maps/Credits.gd" type="Script" id=1]
+
+[sub_resource type="GradientTexture" id=1]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 1026.0
+margin_bottom = 600.0
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer"]
+margin_right = 986.0
+margin_bottom = 560.0
+text = "																											Credits
+Daniel Shapiro:
+Produced/Developed/Coded
+Designed player NPC and monster Sprites
+Designed ingredient sprites
+Designed Custom Buttons
+Designed Inventory
+Designed Map Layout
+
+Textures:
+
+Grass, stone road, Grassy Trees, and fence Textures:
+davidfilus
+https://foozlecc.itch.io/lucifer-tileset-pack-1
+
+House Textures:
+Szadi
+https://szadiart.itch.io/houses-pack
+
+Indoor Textures:
+Tilation
+https://tilation.itch.io/16x16-small-indoor-tileset
+
+Winter Trees and  tilemap:
+Stealthix
+https://stealthix.itch.io/rpg-nature-tileset
+
+Light Woods Background:
+saukgp
+https://saurabhkgp.itch.io/pixel-art-forest-background-simple-seamless-parallax-ready-for-2d-platformer-s
+
+Main Menu Background:
+edermunizz
+https://edermunizz.itch.io/free-pixel-art-hill
+
+Font: 
+
+in : Medieval
+Prince Valiant - Dieter Steffmann 
+
+
+
+																									"
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -134.0
+margin_top = -27.0
+margin_right = -73.0
+margin_bottom = -7.0
+text = "Done"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_Button_pressed"]

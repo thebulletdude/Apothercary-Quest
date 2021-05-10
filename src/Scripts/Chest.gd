@@ -15,8 +15,16 @@ func _ready():
 
 
 func _process(_delta):
-	if(player && Input.is_key_pressed(KEY_E)):
+	if(player && Input.is_key_pressed(KEY_E)) && !opened:
 		$ChestSprite.texture = load("res://src/Assets/Sprites/OpenedChest.png")
+		var random = randi()%100 + 1
+		if(random > 0 && random < 33):
+			random = 4
+		elif(random >=  33 && random < 66):
+			random = 9
+		else:
+			random = 6
+		Controller.addItem(random)
 
 
 

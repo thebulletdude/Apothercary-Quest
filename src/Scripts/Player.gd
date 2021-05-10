@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 const MAX_SPEED = 200
-const FRICTION = 600
-const ACCEL = 150
+const FRICTION = 900
+const ACCEL = 200
 var combat = false
 
 var velocity = Vector2.ZERO
@@ -17,7 +17,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	#combat = Global.combat
-	if(!combat):
+	if(!combat && !Controller.inDialogue):
 		var inputVector = Vector2.ZERO
 		#Gets the input and keeps all lengths the same
 		inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")

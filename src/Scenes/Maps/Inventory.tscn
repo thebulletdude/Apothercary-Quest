@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/Scenes/Maps/Slot.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Scripts/Inventory.gd" type="Script" id=2]
-[ext_resource path="res://src/Assets/Inventory/Equals.png" type="Texture" id=5]
+[ext_resource path="res://src/Assets/Inventory/Equals.png" type="Texture" id=1]
+[ext_resource path="res://src/Scenes/Maps/Slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Scripts/Inventory.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0235294, 0.2, 0.4, 1 )
@@ -12,7 +12,7 @@ colors = PoolColorArray( 0.196078, 0.117647, 0.0705882, 1, 0.253906, 0.142011, 0
 gradient = SubResource( 1 )
 
 [node name="Inventory" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 margin_right = 1024.0
@@ -98,193 +98,193 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Slot1" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot1" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 
-[node name="Slot2" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot2" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 80.0
 margin_right = 152.0
 
-[node name="Slot3" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot3" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 160.0
 margin_right = 232.0
 
-[node name="Slot4" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot4" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 240.0
 margin_right = 312.0
 
-[node name="Slot5" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot5" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 320.0
 margin_right = 392.0
 
-[node name="Slot6" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot6" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 400.0
 margin_right = 472.0
 
-[node name="Slot7" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot7" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_top = 82.0
 margin_bottom = 154.0
 
-[node name="Slot8" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot8" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 80.0
 margin_top = 82.0
 margin_right = 152.0
 margin_bottom = 154.0
 
-[node name="Slot9" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot9" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 160.0
 margin_top = 82.0
 margin_right = 232.0
 margin_bottom = 154.0
 
-[node name="Slot10" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot10" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 240.0
 margin_top = 82.0
 margin_right = 312.0
 margin_bottom = 154.0
 
-[node name="Slot11" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot11" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 320.0
 margin_top = 82.0
 margin_right = 392.0
 margin_bottom = 154.0
 
-[node name="Slot12" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot12" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 400.0
 margin_top = 82.0
 margin_right = 472.0
 margin_bottom = 154.0
 
-[node name="Slot13" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot13" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_top = 164.0
 margin_bottom = 236.0
 
-[node name="Slot14" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot14" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 80.0
 margin_top = 164.0
 margin_right = 152.0
 margin_bottom = 236.0
 
-[node name="Slot15" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot15" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 160.0
 margin_top = 164.0
 margin_right = 232.0
 margin_bottom = 236.0
 
-[node name="Slot16" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot16" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 240.0
 margin_top = 164.0
 margin_right = 312.0
 margin_bottom = 236.0
 
-[node name="Slot17" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot17" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 320.0
 margin_top = 164.0
 margin_right = 392.0
 margin_bottom = 236.0
 
-[node name="Slot18" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot18" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 400.0
 margin_top = 164.0
 margin_right = 472.0
 margin_bottom = 236.0
 
-[node name="Slot19" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot19" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_top = 246.0
 margin_bottom = 318.0
 
-[node name="Slot20" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot20" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 80.0
 margin_top = 246.0
 margin_right = 152.0
 margin_bottom = 318.0
 
-[node name="Slot21" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot21" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 160.0
 margin_top = 246.0
 margin_right = 232.0
 margin_bottom = 318.0
 
-[node name="Slot22" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot22" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 240.0
 margin_top = 246.0
 margin_right = 312.0
 margin_bottom = 318.0
 
-[node name="Slot23" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot23" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 320.0
 margin_top = 246.0
 margin_right = 392.0
 margin_bottom = 318.0
 
-[node name="Slot24" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot24" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 400.0
 margin_top = 246.0
 margin_right = 472.0
 margin_bottom = 318.0
 
-[node name="Slot25" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot25" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_top = 328.0
 margin_bottom = 400.0
 
-[node name="Slot26" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot26" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 80.0
 margin_top = 328.0
 margin_right = 152.0
 margin_bottom = 400.0
 
-[node name="Slot27" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot27" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 160.0
 margin_top = 328.0
 margin_right = 232.0
 margin_bottom = 400.0
 
-[node name="Slot28" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot28" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 240.0
 margin_top = 328.0
 margin_right = 312.0
 margin_bottom = 400.0
 
-[node name="Slot29" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot29" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 320.0
 margin_top = 328.0
 margin_right = 392.0
 margin_bottom = 400.0
 
-[node name="Slot30" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot30" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 400.0
 margin_top = 328.0
 margin_right = 472.0
 margin_bottom = 400.0
 
-[node name="Slot31" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot31" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_top = 410.0
 margin_bottom = 482.0
 
-[node name="Slot32" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot32" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 80.0
 margin_top = 410.0
 margin_right = 152.0
 margin_bottom = 482.0
 
-[node name="Slot33" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot33" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 160.0
 margin_top = 410.0
 margin_right = 232.0
 margin_bottom = 482.0
 
-[node name="Slot34" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot34" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 240.0
 margin_top = 410.0
 margin_right = 312.0
 margin_bottom = 482.0
 
-[node name="Slot35" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot35" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 320.0
 margin_top = 410.0
 margin_right = 392.0
 margin_bottom = 482.0
 
-[node name="Slot36" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 1 )]
+[node name="Slot36" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/ColorRect/InventoryContainer" instance=ExtResource( 2 )]
 margin_left = 400.0
 margin_top = 410.0
 margin_right = 472.0
@@ -333,13 +333,13 @@ custom_constants/vseparation = 0
 custom_constants/hseparation = 23
 columns = 5
 
-[node name="Craft1" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 1 )]
+[node name="Craft1" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 2 )]
 
-[node name="Craft2" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 1 )]
+[node name="Craft2" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 95.0
 margin_right = 167.0
 
-[node name="Craft3" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 1 )]
+[node name="Craft3" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 190.0
 margin_right = 262.0
 
@@ -347,9 +347,9 @@ margin_right = 262.0
 margin_left = 285.0
 margin_right = 357.0
 margin_bottom = 72.0
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 
-[node name="Craft4" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 1 )]
+[node name="Craft4" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect/VBoxContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 380.0
 margin_right = 452.0
 
@@ -441,17 +441,17 @@ custom_constants/vseparation = 0
 custom_constants/hseparation = 23
 columns = 5
 
-[node name="Recipe1" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 1 )]
+[node name="Recipe1" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 2 )]
 
 [node name="Icon" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2/Recipe1" index="0"]
 margin_left = 2.8811
 margin_right = -7.1189
 
-[node name="Recipe2" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 1 )]
+[node name="Recipe2" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 2 )]
 margin_left = 95.0
 margin_right = 167.0
 
-[node name="Recipe3" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 1 )]
+[node name="Recipe3" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 2 )]
 margin_left = 190.0
 margin_right = 262.0
 
@@ -459,9 +459,9 @@ margin_right = 262.0
 margin_left = 285.0
 margin_right = 357.0
 margin_bottom = 72.0
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 
-[node name="Recipe4" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 1 )]
+[node name="Recipe4" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ColorRect2/VBoxContainer/GridContainer2" instance=ExtResource( 2 )]
 margin_left = 380.0
 margin_right = 452.0
 

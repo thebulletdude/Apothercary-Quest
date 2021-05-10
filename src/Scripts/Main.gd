@@ -1,27 +1,48 @@
 extends Node
 
-onready var current_scene = $Testing_Map
+onready var main_menu = $HomeScreen
 const combat_map = preload("res://src/Scenes/Maps/Combat_Map.tscn")
-onready var outsideHome = $Testing_Map
+onready var outsideHome = preload("res://src/Scenes/Maps/Testing_Map.tscn").instance()
 onready var woods = preload("res://src/Scenes/Maps/Woods.tscn").instance()
 onready var home = preload("res://src/Scenes/MapAssets/Home.tscn").instance()
 onready var tavern = preload("res://src/Scenes/MapAssets/Tavern.tscn").instance()
 onready var plains = preload("res://src/Scenes/Maps/Plains.tscn").instance()
 onready var snow = preload("res://src/Scenes/Maps/SnowArea.tscn").instance()
 onready var mforest = preload("res://src/Scenes/Maps/MiniForest.tscn").instance()
+onready var controls = preload("res://src/Scenes/Maps/Controls.tscn").instance()
+onready var credits = preload("res://src/Scenes/Maps/Credits.tscn").instance()
+onready var current_scene = home
 var combat
 
 const inventory_map = preload("res://src/Scenes/Maps/Inventory.tscn")
 var inventory
 
+
+func _ready():
+	credits.connect("done", self, "end_credits")
+	controls.connect("goforth", self, "on_GoForth")
 func _process(_delta):
+	if(Controller.start):
+		Controller.start = false
+		remove_child(main_menu)
+		add_child(controls)
+		Controller.currentMap = Controller.areas.HOME
+	if(Controller.credits):
+		Controller.credits = false
+		remove_child(main_menu)
+		add_child(credits)
 	if(Controller.combat == true):
 		enter_battle()
 	if(Controller.inventory == true):
+		if(!combat):
+			open_Inventory()
 		Controller.inventory = false
-		open_Inventory()
 	if(Controller.mapTrigger == true):
 		mapChange()
+
+func end_credits():
+	remove_child(credits)
+	get_tree().reload_current_scene()
 
 func mapChange():
 	Controller.mapTrigger = false
@@ -106,6 +127,16 @@ func enter_battle():
 	#Adds the combat screen and makes sure that the proper methods are connected
 	add_child(combat)
 	combat.connect("combat_over", self, "_on_Combat_Map_combat_over")
+	combat.connect("gameOver", self, "_on_gameOver")
+	
+func _on_gameOver():
+	combat.queue_free()
+	add_child(credits)
+	
+	
+func on_GoForth():
+	remove_child(controls)
+	add_child(current_scene)
 
 #Gets called after combat returns to the original position. Resets the combat.
 func exit_battle():
