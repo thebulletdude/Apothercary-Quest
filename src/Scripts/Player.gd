@@ -33,7 +33,6 @@ func _physics_process(delta):
 		inputVector = inputVector.normalized()
 		
 		
-		print(inputVector)
 		#Determines the direction and speed of the object
 		if (inputVector != Vector2.ZERO):
 			velocity = velocity.move_toward(inputVector * MAX_SPEED, delta * ACCEL)

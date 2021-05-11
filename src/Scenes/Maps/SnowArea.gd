@@ -16,7 +16,6 @@ func _process(_delta):
 		if(is_instance_valid(n)):
 			timers[count].start(5)
 		count += 1
-	print(enemy)
 		
 func spawnEnemies():
 	var count = 0
@@ -33,19 +32,15 @@ func spawnEnemies():
 
 
 func _on_Timer1_timeout():
-	print("ring")
 	canSpawn[0] = true
 
 func _on_Timer2_timeout():
-	print("ring")
 	canSpawn[1] = true
 
 func _on_Timer3_timeout():
-	print("ring")
 	canSpawn[2] = true
 
 func _on_Timer4_timeout():
-	print("ring")
 	canSpawn[3] = true
 
 
