@@ -4,12 +4,12 @@ var invData
 
 
 var main_inventory = {
-	"Slot1": 9,
-	"Slot2": 2,
-	"Slot3": 5,
-	"Slot4": 6,
-	"Slot5": 7,
-	"Slot6": 4,
+	"Slot1": 8,
+	"Slot2": 13,
+	"Slot3": 16,
+	"Slot4": null,
+	"Slot5": null,
+	"Slot6": null,
 	"Slot7": null,
 	"Slot8": null,
 	"Slot9": null,
@@ -42,12 +42,12 @@ var main_inventory = {
 	"Slot36": null}
 	
 var starting_inventory = {
-	"Slot1": 9,
-	"Slot2": 2,
-	"Slot3": 5,
-	"Slot4": 6,
-	"Slot5": 7,
-	"Slot6": 4,
+	"Slot1": 8,
+	"Slot2": 13,
+	"Slot3": 16,
+	"Slot4": 14,
+	"Slot5": 15,
+	"Slot6": 17,
 	"Slot7": null,
 	"Slot8": null,
 	"Slot9": null,
@@ -109,7 +109,3 @@ func _ready():
 	inv_data_file.close()
 	invData = inv_data_json.result
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
