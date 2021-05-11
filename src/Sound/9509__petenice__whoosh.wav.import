@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/9509__petenice__whoosh.wav-eb312a0867a031d18ec5ed51cc45e741.sample"
+
+[deps]
+
+source_file="res://src/Sound/9509__petenice__whoosh.wav"
+dest_files=[ "res://.import/9509__petenice__whoosh.wav-eb312a0867a031d18ec5ed51cc45e741.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1248,5 +1248,5 @@ position = Vector2( 1010.28, 498.012 )
 shape = SubResource( 3 )
 
 [node name="Ghost" parent="." instance=ExtResource( 5 )]
-position = Vector2( 406.765, 368.517 )
+position = Vector2( 412.975, 373.396 )
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_StaticBody2D_body_entered"]

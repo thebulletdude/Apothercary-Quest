@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/216783__castironcarousel__punch-8.wav-f98f69c2ec5bb94fed166234213943a4.sample"
+
+[deps]
+
+source_file="res://src/Sound/216783__castironcarousel__punch-8.wav"
+dest_files=[ "res://.import/216783__castironcarousel__punch-8.wav-f98f69c2ec5bb94fed166234213943a4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/423526__ccolbert70eagles23__karate-chop.wav-64644d5b98cf786b13787f638f299ff4.sample"
+
+[deps]
+
+source_file="res://src/Sound/423526__ccolbert70eagles23__karate-chop.wav"
+dest_files=[ "res://.import/423526__ccolbert70eagles23__karate-chop.wav-64644d5b98cf786b13787f638f299ff4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

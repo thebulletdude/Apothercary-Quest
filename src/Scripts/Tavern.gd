@@ -33,7 +33,7 @@ func _on_Area2D_body_entered(body):
 		Controller.mapTrigger = true
 
 func _on_YesButton_pressed():
-	$DialogueScreen/DialogueLabel.text = "Thank you very much"
+	Controller.message = "Thank you very much"
 	$DialogueScreen/YesButton.visible = false
 	$DialogueScreen/NoButton.visible = false
 	Controller.quests[Controller.currentQuest] = 1
@@ -42,7 +42,7 @@ func _on_YesButton_pressed():
 
 
 func _on_NoButton_pressed():
-	$DialogueScreen/DialogueLabel.text = "If you change your mind I will be here."
+	Controller.message = "If you change your mind I will be here."
 	$DialogueScreen/YesButton.visible = false
 	$DialogueScreen/NoButton.visible = false
 	Controller.acceptReward = null

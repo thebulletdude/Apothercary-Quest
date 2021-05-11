@@ -13,15 +13,21 @@ onready var controls = preload("res://src/Scenes/Maps/Controls.tscn").instance()
 onready var credits = preload("res://src/Scenes/Maps/Credits.tscn").instance()
 onready var current_scene = home
 var combat
+var inCombat = false
 
 const inventory_map = preload("res://src/Scenes/Maps/Inventory.tscn")
 var inventory
+
 
 
 func _ready():
 	credits.connect("done", self, "end_credits")
 	controls.connect("goforth", self, "on_GoForth")
 func _process(_delta):
+	if(!$Overworld.playing && !$CombatMusic.playing && !inCombat):
+		$Overworld.play()
+	if(!$Overworld.playing && !$CombatMusic.playing && inCombat):
+		$CombatMusic.play()
 	if(Controller.start):
 		Controller.start = false
 		remove_child(main_menu)
@@ -42,6 +48,7 @@ func _process(_delta):
 
 func end_credits():
 	remove_child(credits)
+	Controller.holdPlayer = false
 	get_tree().reload_current_scene()
 
 func mapChange():
@@ -122,6 +129,9 @@ func mapChange():
 #A function to switch the scene to the combat screen
 func enter_battle():
 	Controller.combat = false
+	inCombat = true
+	$CombatMusic.play()
+	$Overworld.playing = false
 	remove_child(current_scene)
 	combat = combat_map.instance()
 	#Adds the combat screen and makes sure that the proper methods are connected
@@ -130,6 +140,8 @@ func enter_battle():
 	combat.connect("gameOver", self, "_on_gameOver")
 	
 func _on_gameOver():
+	inCombat = false
+	$CombatMusic.playing = false
 	combat.queue_free()
 	add_child(credits)
 	
@@ -140,10 +152,14 @@ func on_GoForth():
 
 #Gets called after combat returns to the original position. Resets the combat.
 func exit_battle():
+	inCombat = false
+	$CombatMusic.playing = false
 	Controller.holdPlayer = false
 	combat.queue_free()
-	add_child(current_scene)
-
+	if(Controller.HP > 0):
+		add_child(current_scene)
+	else:
+		get_tree().reload_current_scene()
 func _on_Controller_combat():
 	enter_battle()
 

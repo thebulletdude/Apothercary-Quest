@@ -39,10 +39,9 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 5 )
 animation = "idle"
-frame = 2
 
 [node name="CollisionShape2D" parent="DetectionCircle" index="0"]
-position = Vector2( -1.25, 1.75 )
+position = Vector2( 4.76041, 10.9424 )
 
 [node name="CollisionShape2D" parent="CombatCircle" index="0"]
 position = Vector2( 0.25, 13 )

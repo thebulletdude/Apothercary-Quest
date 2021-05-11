@@ -37,18 +37,15 @@ region = Rect2( 240, 0, 48, 48 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "default",
-"speed": 5.0
+"name": "idle",
+"speed": 10.0
 } ]
 
 [node name="act_TomatoPirate" instance=ExtResource( 2 )]
+scale = Vector2( 1, 1 )
 
-[node name="spr_ballboy" parent="." index="1"]
-texture = null
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
-position = Vector2( -0.413086, -21.0634 )
+[node name="AnimatedSprite" parent="." index="3"]
+position = Vector2( 0.221443, -25.7788 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
-frame = 4
-playing = true
+animation = "idle"

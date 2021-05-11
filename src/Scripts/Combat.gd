@@ -182,6 +182,7 @@ func _on_AttackButton_pressed():
 			if(_checkAvailable(selectedIndex)):
 				check = true
 		check = false
+	$PlayerHit.play()
 	$Player/AnimationPlayer.play("attack")
 	yield($Player/AnimationPlayer, "animation_finished")
 	if(enemyCount > 0):
@@ -207,7 +208,6 @@ func _on_FleeButton_pressed():
 ###########################
 
 func _on_FirePotion_pressed():
-	$UI.visible = false
 	for n in range(len(enemyList)):
 		if(_checkAvailable(n)):
 			enemyList[n] -= 5
@@ -216,7 +216,6 @@ func _on_FirePotion_pressed():
 	removePotion(findPotionIndex(9))
 	
 func _on_IcePotion_pressed():
-	$UI.visible = false
 	for n in range(len(enemyList)):
 		if(_checkAvailable(n)):
 			enemyList[n] -= 5
@@ -238,6 +237,9 @@ func _on_HealthPotion_pressed():
 		currentState = states.COMBAT_OVER
 	
 func AoECheck():
+	$UI.visible = false
+	$ItemList.visible = false
+	$PlayerHit.play()
 	var count = 0
 	for n in enemyList:
 		if(n <= 0 && taken[count]):
@@ -255,6 +257,8 @@ func AoECheck():
 			_move_Pointer()
 			if(_checkAvailable(selectedIndex)):
 				check = true
+	$Player/AnimationPlayer.play("attack")
+	yield($Player/AnimationPlayer, "animation_finished")
 	check = false
 	$ItemList.visible = false
 	if(enemyCount > 0):
@@ -299,10 +303,12 @@ func fight():
 			hit = currentEnemy.fight()
 			$InformationPanel.visible = true
 			if(hit):
+				$EnemyHit.play()
 				$InformationPanel/DamageLabel.text = "The enemy hits dealing " + str(Controller.enemyDamage) + " damage."
 				Controller.HP -= Controller.enemyDamage
 				$UI/HPLabel.text = "HP: " + str(Controller.HP)
 			else:
+				$Miss.play()
 				$InformationPanel/DamageLabel.text = "The enemy misses."
 			enemies[count].get_node("AnimationPlayer").play("attack")
 			yield(enemies[count].get_node("AnimationPlayer"), "animation_finished")

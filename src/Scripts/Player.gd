@@ -1,11 +1,19 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 200
+const MAX_SPEED = 100
 const FRICTION = 900
 const ACCEL = 200
 var combat = false
 
 var velocity = Vector2.ZERO
+
+enum direction {
+	FRONT,
+	BACK,
+	LEFT,
+	RIGHT
+}
+var currentDirection = direction.RIGHT
 
 
 func _process(_delta):
@@ -25,12 +33,37 @@ func _physics_process(delta):
 		inputVector = inputVector.normalized()
 		
 		
+		print(inputVector)
 		#Determines the direction and speed of the object
 		if (inputVector != Vector2.ZERO):
 			velocity = velocity.move_toward(inputVector * MAX_SPEED, delta * ACCEL)
+			if(inputVector.y < 0):
+				$PlayerSprite.animation = "RunB"
+				currentDirection = direction.BACK
+			elif(inputVector.y > 0):
+				$PlayerSprite.animation = "RunF"
+				currentDirection = direction.FRONT
+			elif(inputVector.x > 0):
+				$PlayerSprite.animation = "RunR"
+				currentDirection = direction.RIGHT
+			elif(inputVector.x < 0):
+				$PlayerSprite.animation = "RunL"
+				currentDirection = direction.LEFT
 		else:
-			velocity = velocity.move_toward(Vector2.ZERO, delta * FRICTION)
+			if(currentDirection == direction.FRONT):
+				$PlayerSprite.animation = "IdleF"
+			elif(currentDirection == direction.BACK):
+				$PlayerSprite.animation = "IdleB"
+			elif(currentDirection == direction.RIGHT):
+				$PlayerSprite.animation = "IdleR"
+			else:
+				$PlayerSprite.animation = "IdleL"
+			velocity = velocity.move_toward(Vector2.ZERO, delta * FRICTION)\
 		
 		
 		velocity = move_and_slide(velocity)
+		
+		
+	else:
+		$PlayerSprite.animation = "IdleR"
 

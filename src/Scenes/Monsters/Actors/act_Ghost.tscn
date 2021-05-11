@@ -27,7 +27,7 @@ region = Rect2( 240, 0, 80, 96 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
-"name": "idle",
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -35,10 +35,8 @@ animations = [ {
 position = Vector2( 0.667419, -73.4162 )
 scale = Vector2( 2, 2 )
 
-[node name="spr_ballboy" parent="." index="1"]
-texture = null
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+[node name="AnimatedSprite" parent="." index="3"]
+position = Vector2( -1.14256, -1.5895 )
 frames = SubResource( 5 )
-animation = "idle"
-playing = true
+animation = "Idle"
+frame = 2

@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	Controller.combat = false
+	Controller.inDialogue = true
 	InventoryData.main_inventory = InventoryData.starting_inventory
 	
 

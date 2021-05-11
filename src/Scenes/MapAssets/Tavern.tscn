@@ -68,6 +68,7 @@ position = Vector2( 144.939, 266.59 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="DialogueScreen" type="Panel" parent="."]
+visible = false
 margin_right = 288.0
 margin_bottom = 319.0
 custom_styles/panel = SubResource( 2 )
